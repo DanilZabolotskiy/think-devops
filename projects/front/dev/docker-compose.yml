@@ -1,0 +1,9 @@
+version: "3.2"
+services:
+  front-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: front-server-dev
+    ports:
+      - "3001:3001"

@@ -1,0 +1,32 @@
+version: "3.2"
+services:
+  postgres-test:
+    build:
+      context: ../../../
+      dockerfile: ./postgres/Dockerfile
+    container_name: postgres-test
+    environment:
+      POSTGRES_DB: think-platform-test
+      POSTGRES_USER: think
+      POSTGRES_PASSWORD: think
+    expose:
+      - "5434"
+    ports:
+      - "5434:5434"
+    command: -p 5434
+
+  back-server-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: back-server-test
+    ports:
+      - "5558:5558"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-test:5434/think-platform-test
+      SPRING_DATASOURCE_USERNAME: think
+      SPRING_DATASOURCE_PASSWORD: think
+      SERVER_PORT: 5558
+    depends_on:
+      - postgres-test
+
