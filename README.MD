@@ -1,4 +1,4 @@
-### Развертывание
+### Быстрое развертывание
 * Установить: git, docker, docker-compose, make.  
 [**install-requirements.bash**](https://git.java-mentor.com/Alie/think-devops/-/blob/master/script/install-requirements.bash)
 * Склонировать репозиторий  
