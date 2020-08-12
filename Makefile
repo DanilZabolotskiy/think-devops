@@ -2,7 +2,7 @@ DOCKER_BACK_TEST = "projects/back/test/docker-compose.yml"
 DOCKER_BACK_RELEASE = "projects/back/release/docker-compose.yml"
 
 clone-test:
-	git clone https://alie:vivec3769@git.java-mentor.com/pahomov_dm/think-platfotm -b $(branch_name) ./projects/back/test/app
+	git clone https://xxx:xxx@git.java-mentor.com/xxx/think-platfotm -b $(branch_name) ./projects/back/test/app
 test:
 	docker-compose -f ${DOCKER_BACK_TEST} up --build back-server-test
 clean-test:
@@ -17,7 +17,7 @@ config-test:
 clean-release:
 	rm -rf ./projects/back/release/app
 clone-release:clean-release
-	git clone https://alie:vivec3769@git.java-mentor.com/pahomov_dm/think-platfotm -b release ./projects/back/release/app
+	git clone https://xxx:xxx@git.java-mentor.com/xxx/think-platfotm -b release ./projects/back/release/app
 restart-release:clone-release
 	docker-compose -f ${DOCKER_BACK_RELEASE} up --build -d back-server-release
 logs-release:
