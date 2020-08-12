@@ -3,7 +3,7 @@ DOCKER_BACK_DEV = "docker-compose.yml"
 clean-dev:
 	rm -rf ./projects/back/dev/app
 clone-dev:clean-dev
-	git clone https://alie:vivec3769@git.java-mentor.com/pahomov_dm/think-platfotm -b dev ./app
+	git clone https://xxxxxx@git.java-mentor.com/xxx/think-platfotm -b dev ./app
 restart-dev:clone-dev
 	docker-compose -f ${DOCKER_BACK_DEV} up --build -d back-server-dev
 logs-dev:
